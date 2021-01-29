@@ -33,7 +33,7 @@ can define it within the configuration file with `$config['mobile']['fixed_toolb
 
 ### $this->mobile->header( … )->back_to(*$url, $text*)
 
-This method must be linked to header () to work. Create a button in the left 
+This method must be linked to `header()` to work. Create a button in the left 
 area of ​​the horizontal bar with a link to the page that we indicate, 
 making a backward slide. By default, jQuery Mobile creates back buttons automatically. 
 If we want to set ours, we must do it this way and disable the option of 
