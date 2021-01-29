@@ -50,7 +50,7 @@ we can define one of the [preset icons within jQuery Mobile](https://api.jqueryu
 
 Just below the top navigation bar, we can create another auxiliary with various buttons. 
 To do this, we must create an array with the url as key and the link text as value. 
-That is, `$links['welcome/index'] = ‘Home’`, for example. 
+That is, `$links['welcome/index'] = 'Home'`, for example. 
 jQuery Mobile already takes care of automatically dividing this bar into as many 
 parts as there are values ​​in the navigation bar. If we want the text to have an icon, 
 we can create a compound array specifying the text and the icon we want. That is, 
@@ -81,7 +81,7 @@ defined that help in the development of the pages thanks to jQuery Mobile.
 
 It works exactly the same as the `anchor()` function of CodeIgniter but 
 it accepts as the last parameter the transition we want to make for the next page 
-`(‘slide’, ‘slideup’, ‘slidedown’, ‘pop’, ‘fade’, ‘flip’)`.
+`('slide', 'slideup', 'slidedown', 'pop', 'fade', 'flip')`.
 Inside the configuration file, we can define a general transition for all those 
 that are made (it will also be applied in the `back_to()` and `button()` methods. 
 Also, the transitions will only be made if we have the option to load by AJAX activated.
