@@ -10,7 +10,7 @@ public function index()
 		$this->mobile->header('Welcome to CodeIgniter!', 'e')->button('welcome/help', 'Help', 'info');
 
 		$this->mobile->navbar(array(
-			'welcome/index' 	=> array('text' => 'Home', 		'icon' => 'home'),
+			'welcome/index' 	=> array('text' => 'Home',      'icon' => 'home'),
 			'welcome/settings'	=> array('text' => 'Settings', 	'icon' => 'gear')
 		), 'a');
 
