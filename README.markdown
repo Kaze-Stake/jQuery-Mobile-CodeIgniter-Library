@@ -1,7 +1,6 @@
 ## CodeIgniter jQuery Mobile Library
 
-Libreria para el desarrollo de versiones móviles de páginas con el framework
-jQuery Mobile.
+Library for the development of mobile versions of pages with the jQuery Mobile framework.
 
 ```
 public function index()
@@ -22,98 +21,85 @@ public function index()
 }
 ```
 
-## Métodos
+## Methods
 
 ### $this->mobile->header(*$title, $theme*)
 
-Crea una barra horizontal con el título como primer primer argumento y, como 
-segundo argumento (opcional) uno de los temas disponibles desde jQuery Mobile.
-Será una letra desde a-e. Para definir un tema global, lo podemos hacer dentro
-del archivo de configuración. Además, si queremos que la barra mantenga una 
-posición estática y se desplace con la página, podemos definirlo dentro del 
-archivo de configuración con `$config['mobile']['fixed_toolbars'] = TRUE;`
+Create a horizontal bar with the title as the first argument and, as the second 
+argument (optional), one of the themes available from jQuery Mobile.It will be a 
+letter from a-e. To define a global theme, we can do it within the configuration file. 
+Also, if we want the bar to maintain a static position and move with the page, we 
+can define it within the configuration file with `$config['mobile']['fixed_toolbars'] = TRUE;`
 
 ### $this->mobile->header( … )->back_to(*$url, $text*)
 
-Éste método debe ir encadenado al de `header()` para que funcione. Crea un botón 
-en la zona izquierda de la barra horizontal con un enlace a la página que 
-indiquemos, realizando un deslizamiento hacia atrás. Por defecto, jQuery 
-Mobile crea botones hacia atrás de forma automática. Si queremos establecer 
-los nuestros, debemos hacerlo de esta forma y desactivar la opción de 
-`$config['mobile']['backbtn_auto'] = FALSE;` dentro del archivo de configuración.
+This method must be linked to header () to work. Create a button in the left 
+area of ​​the horizontal bar with a link to the page that we indicate, 
+making a backward slide. By default, jQuery Mobile creates back buttons automatically. 
+If we want to set ours, we must do it this way and disable the option of 
+`$config['mobile']['backbtn_auto'] = FALSE;` inside the configuration file.
 
 ### $this->mobile->header( … )->button(*$url, $text, $icon*)
 
-Nuevamente, este método debe ir encadenado al de `header()`. Tambien se puede 
-hacer un encadenamiento doble entre `$this->mobile->header( … )->back_to( … )->button( … )`. 
-Este último, crea un botón en la zona derecha de la barra de navegación. 
-Como tercer argumento *(opcional)* podemos definir uno de los [iconos 
-preestablecidos dentro de jQuery Mobile](http://jquerymobile.com/demos/1.0b2/#/demos/1.0b2/docs/buttons/buttons-icons.html).
+Again, this method must be linked to that of `header()`. You can also do 
+a double chain between `$this->mobile->header( … )->back_to( … )->button( … )`. 
+The latter creates a button in the right area of ​​the navigation bar. As a third argument *(optional)* 
+we can define one of the [preset icons within jQuery Mobile](http://jquerymobile.com/demos/1.0b2/#/demos/1.0b2/docs/buttons/buttons-icons.html).
 
 ### $this->mobile->navbar(*$links = array( ), $theme*)
 
-Justo por debajo de la barra superior de navegación, podemos crear otra 
-auxiliar con diversos botones. Para ello, debemos crear una array con la url 
-como key y el texto del enlace como value. Es decir `$links['welcome/index'] = ‘Home’`,
-por ejemplo. jQuery Mobile ya se encarga de dividir automáticamente este barra 
-en tantas partes como valores tenga la barra de navegación. Si queremos que el
-texto lleve un icono, podemos crear una array compuesta especificando el texto y
-el icono que queremos. Es decir, el ejemplo anterior con icono seria: 
-`$links['welcome/index'] = array('text' => 'Home', 'icon' => 'home');`. Como 
-segundo argumento del método `navbar()`, podemos establecer un tema individual 
-para ésta.
+Just below the top navigation bar, we can create another auxiliary with various buttons. 
+To do this, we must create an array with the url as key and the link text as value. 
+That is, `$links['welcome/index'] = ‘Home’`, for example. 
+jQuery Mobile already takes care of automatically dividing this bar into as many 
+parts as there are values ​​in the navigation bar. If we want the text to have an icon, 
+we can create a compound array specifying the text and the icon we want. That is, 
+the previous example with icon would be: 
+`$links['welcome/index'] = array('text' => 'Home', 'icon' => 'home');`.
+As the second argument to the `navbar()` method, we can set an individual theme for it.
 
 ### $this->mobile->footer(*$title, $theme*)
 
-Funciona exactamente igual que la barra de header, pero creando una barra de 
-navegación en la parte inferior de la página. De la misma forma que la barra 
-de header, tambien podemos establecer la posición estática de la barra footer
-dentro del archivo de configuración.
+It works exactly the same as the header bar, but creating a navigation bar at the 
+bottom of the page. In the same way as the header bar, we can also set the static 
+position of the footer bar within the configuration file.
 
 ### $this->mobile->view(*$view, $data = array()*)
 
-Para su funcionamiento, esta libreria dispone de un archivo de plantilla con 
-la base de la estructura de la página. Esto significa que no tenemos que 
-crear de forma individual la cabecera de cada página y solo existe una 
-versión de ésta. Por lo tanto, lo único que tenemos que cargar en la vista 
-es **el contenido de la página que queremos ver**. El funcionamiento de este 
-método es exactamente igual que el de CodeIgniter `$this->load->view( … )`
-y acepta los mismos parámetros.
+For its operation, this library has a template file with the base of the page structure. 
+This means that we do not have to individually create the header for each page and 
+there is only one version of it. Therefore, the only thing we have to load into the view 
+**is the content of the page that we want to see**. The operation of this method is exactly 
+the same as that of CodeIgniter `$this->load->view( … )` and accepts the same parameters.
 
-## Funciones
+## Functions
 
-A parte de los métodos básicos de la libreria, se han definido algunas 
-funciones auxiliares que ayudan en el desarrollo de las páginas gracias a 
-jQuery Mobile.
+Apart from the basic methods of the library, some auxiliary functions have been 
+defined that help in the development of the pages thanks to jQuery Mobile.
 
 #### link_to(*$url, $title, $attr = array(), $transition*)
 
-Funciona exactamente igual que la función `anchor()` de CodeIgniter pero, 
-acepta como último parametro la transición que queremos hacer para la 
-siguiente página `(‘slide’, ‘slideup’, ‘slidedown’, ‘pop’, ‘fade’, ‘flip’)`. 
-Dentro del archivo de configuración, podemos definir una transición general 
-para todas las que se hagan (tambien se aplicará en los métodos de `back_to()`
-y `button()`. Además, las transiciones se realizarán unicamente si tenemos 
-la opción de cargar por AJAX activada.
+It works exactly the same as the `anchor()` function of CodeIgniter but 
+it accepts as the last parameter the transition we want to make for the next page 
+`(‘slide’, ‘slideup’, ‘slidedown’, ‘pop’, ‘fade’, ‘flip’)`.
+Inside the configuration file, we can define a general transition for all those 
+that are made (it will also be applied in the `back_to()` and `button()` methods. 
+Also, the transitions will only be made if we have the option to load by AJAX activated.
 
 ### mail_to(*$email, $text*)
 
-Crea un enlace para enviar un email a la dirección que especifiquemos como 
-primer argumento. Como resultado, aparecerá un enlace con la dirección de 
-email. Si lo queremos, podemos definir un texto alternativo para no mostrar 
-la dirección de email directamente como segundo argumento.
+Create a link to send an email to the address that we specify as the first argument. 
+As a result, a link will appear with the email address. If we want, we can define 
+an alternative text to not show the email address directly as the second argument.
 
 ### text_field(*$name, $text, $placeholder*)
 
-Esta función se tiene que utilizar dentro de los formularios. Simplemente 
-crea un contenedor de formulario tal como establece jQuery Mobile. Los 
-argumentos a utilizar son el nombre `name` que se utilizará dentro del campo 
-input, el texto que queremos que acompañe a nuestro campo como label 
-(opcional) y, por último, el texto *placeholder* que queremos que aparezca 
-dentro del campo (opcional).
+This function has to be used within forms. Just create a form container as set by 
+jQuery Mobile. The arguments to use are the name `name` that will be used within the 
+input field, the text that we want to accompany our field as a label (optional) and, 
+finally, the *placeholder* text that we want to appear within the field (optional).
 
 ### pass_field(*$name, $text, $placeholder*)
 
-Funciona exactamente igual que la función anterior `text_field()`, pero en 
-lugar de crear un campo de texto para los formularios, crea un campo para 
-contraseñas.
+It works exactly the same as the `text_field()` function above, but instead of 
+creating a text field for forms, it creates a field for passwords.
