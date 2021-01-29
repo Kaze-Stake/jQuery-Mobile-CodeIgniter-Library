@@ -26,7 +26,7 @@ public function index()
 ### $this->mobile->header(*$title, $theme*)
 
 Create a horizontal bar with the title as the first argument and, as the second 
-argument (optional), one of the themes available from jQuery Mobile.It will be a 
+argument (optional), one of the themes available from jQuery Mobile. It will be a 
 letter from a-e. To define a global theme, we can do it within the configuration file. 
 Also, if we want the bar to maintain a static position and move with the page, we 
 can define it within the configuration file with `$config['mobile']['fixed_toolbars'] = TRUE;`
