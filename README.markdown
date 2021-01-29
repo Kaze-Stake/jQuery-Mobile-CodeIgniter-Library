@@ -44,7 +44,7 @@ If we want to set ours, we must do it this way and disable the option of
 Again, this method must be linked to that of `header()`. You can also do 
 a double chain between `$this->mobile->header( … )->back_to( … )->button( … )`. 
 The latter creates a button in the right area of ​​the navigation bar. As a third argument *(optional)* 
-we can define one of the [preset icons within jQuery Mobile](http://jquerymobile.com/demos/1.0b2/#/demos/1.0b2/docs/buttons/buttons-icons.html).
+we can define one of the [preset icons within jQuery Mobile](https://api.jqueryui.com/theming/icons/).
 
 ### $this->mobile->navbar(*$links = array( ), $theme*)
 
