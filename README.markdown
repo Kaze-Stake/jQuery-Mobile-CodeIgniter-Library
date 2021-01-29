@@ -42,7 +42,8 @@ If we want to set ours, we must do it this way and disable the option of
 ### $this->mobile->header( … )->button(*$url, $text, $icon*)
 
 Again, this method must be linked to that of `header()`. You can also do 
-a double chain between  `$this->mobile->header( … )->back_to( … )->button( … )`. 
+a double chain between<br>
+`$this->mobile->header( … )->back_to( … )->button( … )`. 
 The latter creates a button in the right area of ​​the navigation bar. As a third argument *(optional)* 
 we can define one of the [preset icons within jQuery Mobile](https://api.jqueryui.com/theming/icons/).
 
@@ -54,7 +55,7 @@ That is, `$links['welcome/index'] = 'Home'`, for example.
 jQuery Mobile already takes care of automatically dividing this bar into as many 
 parts as there are values ​​in the navigation bar. If we want the text to have an icon, 
 we can create a compound array specifying the text and the icon we want. That is, 
-the previous example with icon would be:  
+the previous example with icon would be:<br>
 `$links['welcome/index'] = array('text' => 'Home', 'icon' => 'home');`.
 As the second argument to the `navbar()` method, we can set an individual theme for it.
 
